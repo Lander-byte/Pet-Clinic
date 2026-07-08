@@ -9,7 +9,7 @@ const navItems = [
   { path: '/medical-records', label: 'Medical Records',  icon: '📋' },
 ];
 
-function CustomerSidebar() {
+function CustomerSidebar({ onLogout }) {
   return (
     <aside className="sidebar customer-sidebar">
       <div className="sidebar-logo">
@@ -33,7 +33,7 @@ function CustomerSidebar() {
       </nav>
 
       <div className="sidebar-footer">
-        <Link to="/login" className="sidebar-link logout">
+        <Link to="/login" onClick={onLogout} className="sidebar-link logout">
           <span className="sidebar-icon">🚪</span>
           <span className="sidebar-label">Logout</span>
         </Link>

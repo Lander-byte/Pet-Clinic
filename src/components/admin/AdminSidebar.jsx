@@ -8,7 +8,7 @@ const navItems = [
   { path: '/admin/billing',      label: 'Billing Reports',   icon: '💰' },
 ];
 
-function AdminSidebar() {
+function AdminSidebar({ onLogout }) {
   return (
     <aside className="sidebar admin-sidebar">
       <div className="sidebar-logo">
@@ -32,7 +32,7 @@ function AdminSidebar() {
       </nav>
 
       <div className="sidebar-footer">
-        <Link to="/admin/login" className="sidebar-link logout">
+        <Link to="/admin/login" onClick={onLogout} className="sidebar-link logout">
           <span className="sidebar-icon">🚪</span>
           <span className="sidebar-label">Logout</span>
         </Link>

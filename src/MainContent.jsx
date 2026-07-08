@@ -16,26 +16,29 @@ import AppointmentManagement from './components/admin/AppointmentManagement';
 import PetOwnerManagement from './components/admin/PetOwnerManagement';
 import BillingReports from './components/admin/BillingReports';
 
-function MainContent() {
+function MainContent({ user, onLogin }) {
+  const isCustomer = user && user.role === 'customer';
+  const isAdmin = user && user.role === 'admin';
+
   return (
     <Routes>
       {/* Default redirect */}
       <Route path="/" element={<Navigate to="/login" replace />} />
 
       {/* ── Customer Routes ── */}
-      <Route path="/login"           element={<Login />} />
-      <Route path="/register"        element={<Register />} />
-      <Route path="/dashboard"       element={<Dashboard />} />
-      <Route path="/my-pets"         element={<MyPets />} />
-      <Route path="/appointments"    element={<Appointment />} />
-      <Route path="/medical-records" element={<MedicalRecords />} />
+      <Route path="/login"           element={isCustomer ? <Navigate to="/dashboard" replace /> : <Login onLogin={onLogin} />} />
+      <Route path="/register"        element={isCustomer ? <Navigate to="/dashboard" replace /> : <Register />} />
+      <Route path="/dashboard"       element={isCustomer ? <Dashboard /> : <Navigate to="/login" replace />} />
+      <Route path="/my-pets"         element={isCustomer ? <MyPets /> : <Navigate to="/login" replace />} />
+      <Route path="/appointments"    element={isCustomer ? <Appointment /> : <Navigate to="/login" replace />} />
+      <Route path="/medical-records" element={isCustomer ? <MedicalRecords /> : <Navigate to="/login" replace />} />
 
       {/* ── Admin Routes ── */}
-      <Route path="/admin/login"        element={<AdminLogin />} />
-      <Route path="/admin/dashboard"    element={<AdminDashboard />} />
-      <Route path="/admin/appointments" element={<AppointmentManagement />} />
-      <Route path="/admin/pets-owners"  element={<PetOwnerManagement />} />
-      <Route path="/admin/billing"      element={<BillingReports />} />
+      <Route path="/admin/login"        element={isAdmin ? <Navigate to="/admin/dashboard" replace /> : <AdminLogin onLogin={onLogin} />} />
+      <Route path="/admin/dashboard"    element={isAdmin ? <AdminDashboard /> : <Navigate to="/admin/login" replace />} />
+      <Route path="/admin/appointments" element={isAdmin ? <AppointmentManagement /> : <Navigate to="/admin/login" replace />} />
+      <Route path="/admin/pets-owners"  element={isAdmin ? <PetOwnerManagement /> : <Navigate to="/admin/login" replace />} />
+      <Route path="/admin/billing"      element={isAdmin ? <BillingReports /> : <Navigate to="/admin/login" replace />} />
 
       {/* 404 fallback */}
       <Route path="*" element={<Navigate to="/login" replace />} />
