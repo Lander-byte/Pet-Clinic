@@ -23,6 +23,7 @@ function AdminLogin({ onLogin }) {
 
   return (
     <div className="page auth-page">
+      <Link to="/" className="back-link">← Back to Portal Selection</Link>
       <h1>Admin Login</h1>
       <form className="auth-form" onSubmit={handleSubmit}>
         {error && (
