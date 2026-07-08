@@ -180,7 +180,7 @@ Pet-Clinic/
 ---
 
 ## 📝 Notes
-
+- Admin Primary Color Design is (Yellow Green / Green) | Customer Primary Color Design is (Sky Blue ) : pwede ramu mag add ug other primary color       aslong ma anagay sa design.
 - Authentication uses a **hardcoded array** in `src/users.js` — no backend/database required for now.
 - Session is persisted in **localStorage** so refreshing the page keeps you logged in.
 - Customer and Admin have **separate login pages** (`/login` and `/admin/login`).

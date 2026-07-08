@@ -1,6 +1,9 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+// ── Portal Selection ───────────────────────────────────────────
+import PortalSelection from './components/PortalSelection';
+
 // ── Customer pages ──────────────────────────────────────────────
 import Login from './components/customer/Login';
 import Register from './components/customer/Register';
@@ -22,8 +25,8 @@ function MainContent({ user, onLogin }) {
 
   return (
     <Routes>
-      {/* Default redirect */}
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      {/* Landing selection portal */}
+      <Route path="/" element={<PortalSelection />} />
 
       {/* ── Customer Routes ── */}
       <Route path="/login"           element={isCustomer ? <Navigate to="/dashboard" replace /> : <Login onLogin={onLogin} />} />
@@ -41,7 +44,7 @@ function MainContent({ user, onLogin }) {
       <Route path="/admin/billing"      element={isAdmin ? <BillingReports /> : <Navigate to="/admin/login" replace />} />
 
       {/* 404 fallback */}
-      <Route path="*" element={<Navigate to="/login" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
