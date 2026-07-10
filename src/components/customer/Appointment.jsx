@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import AppointmentDetail from './AppointmentDetail';
+import React from 'react';
 
 const sampleAppointments = [
   { id: 1, pet: 'Buddy',    service: 'Wellness Check',  date: '2026-07-10', time: '10:00 AM', vet: 'Dr. Santos',  status: 'Confirmed' },
@@ -8,12 +7,10 @@ const sampleAppointments = [
 ];
 
 function Appointment() {
-  const [selectedAppointment, setSelectedAppointment] = useState(null);
-
   return (
     <div className="page">
       <h1>My Appointments</h1>
-      <p className="page-subtitle">Click a row to view appointment details.</p>
+      <p className="page-subtitle">View your upcoming and past appointments.</p>
 
       <div className="table-container">
         <table className="data-table">
@@ -29,11 +26,7 @@ function Appointment() {
           </thead>
           <tbody>
             {sampleAppointments.map(appt => (
-              <tr
-                key={appt.id}
-                className="clickable-row"
-                onClick={() => setSelectedAppointment(appt)}
-              >
+              <tr key={appt.id}>
                 <td>{appt.pet}</td>
                 <td>{appt.service}</td>
                 <td>{appt.date}</td>
@@ -49,14 +42,6 @@ function Appointment() {
           </tbody>
         </table>
       </div>
-
-      {/* Detail panel renders when a row is clicked */}
-      {selectedAppointment && (
-        <AppointmentDetail
-          appointment={selectedAppointment}
-          onClose={() => setSelectedAppointment(null)}
-        />
-      )}
     </div>
   );
 }

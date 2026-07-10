@@ -8,8 +8,9 @@ function AdminDashboard() {
       <h1>Admin Dashboard</h1>
       <p className="page-subtitle">Overview of clinic activity and records.</p>
 
-      <div className="dashboard-grid">
-        <DashboardRecords />
+      <DashboardRecords />
+
+      <div style={{ marginTop: '1.5rem' }}>
         <DashboardAppointment />
       </div>
     </div>

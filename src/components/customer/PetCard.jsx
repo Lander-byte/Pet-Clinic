@@ -3,7 +3,7 @@ import React from 'react';
 function PetCard({ pet, onClose }) {
   return (
     <div className="pet-card">
-      <button className="close-btn" onClick={onClose}>✕</button>
+      {onClose && <button className="close-btn" onClick={onClose}>✕</button>}
       <div className="pet-card-header">
         <span className="pet-card-icon">{pet.image}</span>
         <h2 className="pet-card-name">{pet.name}</h2>

@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
+import MedicalHistory from './MedicalHistory';
 import VaccineHistory from './VaccineHistory';
+import Prescriptions from './Prescriptions';
 import MedRecSidebar from './MedRecSidebar';
-import Billing from './Billing';
 
-const sections = ['Vaccine History', 'Billing'];
+const sections = ['Medical History', 'Vaccinations', 'Prescriptions'];
 
 function MedicalRecords() {
-  const [activeSection, setActiveSection] = useState('Vaccine History');
+  const [activeSection, setActiveSection] = useState('Medical History');
 
   return (
     <div className="page medical-records-page">
       <h1>Medical Records</h1>
 
       <div className="med-records-layout">
-        {/* In-page sidebar nav — not a Route */}
+        {/* In-page sidebar nav */}
         <MedRecSidebar
           sections={sections}
           activeSection={activeSection}
@@ -22,8 +23,9 @@ function MedicalRecords() {
 
         {/* Content area changes based on sidebar selection */}
         <div className="med-records-content">
-          {activeSection === 'Vaccine History' && <VaccineHistory />}
-          {activeSection === 'Billing'         && <Billing />}
+          {activeSection === 'Medical History' && <MedicalHistory />}
+          {activeSection === 'Vaccinations'    && <VaccineHistory />}
+          {activeSection === 'Prescriptions'   && <Prescriptions />}
         </div>
       </div>
     </div>

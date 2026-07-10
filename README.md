@@ -67,11 +67,11 @@ Pet-Clinic/
 │   │   │   ├── CustomerSidebar.jsx     # Customer navigation sidebar
 │   │   │   ├── Dashboard.jsx           # Customer dashboard page
 │   │   │   ├── CustomerDashboard.jsx   # Dashboard content/widgets
+│   │   │   ├── CustomerDashboard.css   # Dashboard-specific styles
 │   │   │   ├── MyPets.jsx              # My Pets listing page
 │   │   │   ├── PetCard.jsx             # Individual pet card component
 │   │   │   ├── PetsMiniCard.jsx        # Mini pet card component
 │   │   │   ├── Appointment.jsx         # Appointment list page
-│   │   │   ├── AppointmentDetail.jsx   # Single appointment detail view
 │   │   │   ├── UpcomingAppointment.jsx # Upcoming appointment widget
 │   │   │   ├── MedicalRecords.jsx      # Medical records page
 │   │   │   ├── MedRecSidebar.jsx       # Medical records sidebar
@@ -92,7 +92,7 @@ Pet-Clinic/
 │   │       ├── BillingReports.jsx      # Billing reports page
 │   │       └── BillingRecords.jsx      # Billing records component
 │   │
-│   └── CustomerDashboard.css           # Dashboard-specific styles
+│   └── index.css                       # Base CSS reset and font imports
 │
 ├── package.json
 └── README.md
@@ -135,7 +135,6 @@ Pet-Clinic/
 | `PetCard.jsx` | Individual pet card with pet info display |
 | `PetsMiniCard.jsx` | Compact pet card for sidebar/widget use |
 | `Appointment.jsx` | Customer appointment list with table view |
-| `AppointmentDetail.jsx` | Detailed view for a single appointment |
 | `UpcomingAppointment.jsx` | Upcoming appointment widget for dashboard |
 | `MedicalRecords.jsx` | Medical records page |
 | `MedRecSidebar.jsx` | Medical records sidebar/filter |
