@@ -37,11 +37,11 @@ function Login({ onLogin }) {
     <div className="auth-split-container">
       {/* Left Branding Panel */}
       <div className="auth-left-panel">
-        <div className="auth-logo-wrapper">
-          <PawLogo />
-          <h1 className="auth-logo-text">PET CARE</h1>
+          <div className="auth-logo-wrapper">
+            <PawLogo />
+            <h1 className="auth-logo-text">PET CARE</h1>
+          </div>
         </div>
-      </div>
 
       {/* Right Form Panel */}
       <div className="auth-right-panel">

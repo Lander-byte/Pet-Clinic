@@ -43,7 +43,7 @@ function MainContent({ user, onLogin }) {
       <Route path="/admin/login"        element={isAdmin ? <Navigate to="/admin/dashboard" replace /> : <AdminLogin onLogin={onLogin} />} />
       <Route path="/admin/dashboard"    element={isAdmin ? <AdminDashboard /> : <Navigate to="/admin/login" replace />} />
       <Route path="/admin/appointments" element={isAdmin ? <AppointmentManagement /> : <Navigate to="/admin/login" replace />} />
-      <Route path="/admin/pets-owners"      element={isAdmin ? <PetOwnerManagement /> : <Navigate to="/admin/login" replace />} />
+      <Route path="/admin/pet-owners"      element={isAdmin ? <PetOwnerManagement /> : <Navigate to="/admin/login" replace />} />
       <Route path="/admin/pet-management"  element={isAdmin ? <PetManagement /> : <Navigate to="/admin/login" replace />} />
       <Route path="/admin/billing"          element={isAdmin ? <BillingReports /> : <Navigate to="/admin/login" replace />} />
 

@@ -46,7 +46,7 @@ function CustomerSidebar({ onLogout }) {
       </nav>
 
       <div className="sidebar-footer">
-        <Link to="/login" onClick={onLogout} className="sidebar-link logout">
+        <Link to="/" onClick={onLogout} className="sidebar-link logout">
           <span className="sidebar-icon">🚪</span>
           <span className="sidebar-label">Logout</span>
         </Link>
