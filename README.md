@@ -178,6 +178,68 @@ Pet-Clinic/
 
 ---
 
+## 🗓️ Sprint Plan
+
+### Sprint 1 (Days 1–2) — Foundation & Auth
+
+**Goal:** Get the app shell running with working login/logout and route protection.
+
+| Owner | Tasks |
+|-------|-------|
+| **Quezon** | `App.js` (auth state + localStorage persistence), `MainContent.jsx` (routes + guards), `users.js` mock data, `index.js`, `App.css` base layout/tokens |
+| **Quezon** | `Login.jsx`, `Register.jsx`, `AdminLogin.jsx` — forms + validation against `users.js` |
+| **Mingoy** | `PortalSelection.jsx` + `.css` — gateway page |
+| **Golez** | `CustomerSidebar.jsx` / `AdminSidebar.jsx` — nav shells (no content yet) |
+
+**Exit criteria:** Can log in as customer or admin, land on an empty dashboard shell, and log out. Refresh keeps you logged in.
+
+---
+
+### Sprint 2 (Days 3–4) — Customer Portal Core
+
+**Goal:** Customer can view dashboard, pets, and appointments.
+
+| Owner | Tasks |
+|-------|-------|
+| **Mingoy** | `Dashboard.jsx`, `VaccineReminder.jsx`, `UpcomingAppointment.jsx` |
+| **Mingoy** | `MyPets.jsx`, `PetsMiniCard.jsx`, `PetCard.jsx` (select/close pet detail) |
+| **Mingoy** | `Appointment.jsx`, `AppointmentDetail.jsx` (row click → detail panel) |
+| **Quezon** | QA pass: route guards redirect unauthenticated users correctly for all new customer routes |
+
+**Exit criteria:** Logged-in customer can browse dashboard widgets, click into a pet, and click into an appointment row.
+
+---
+
+### Sprint 3 (Days 5–6) — Admin Portal Core
+
+**Goal:** Admin can view dashboard, manage appointments, and manage pet owners.
+
+| Owner | Tasks |
+|-------|-------|
+| **Golez** | `AdminDashboard.jsx`, `DashboardRecords.jsx`, `DashboardAppointment.jsx` |
+| **Golez** | `AppointmentManagement.jsx`, `AdminAppointmentDetail.jsx` (confirm/cancel actions) |
+| **Golez** | `PetOwnerManagement.jsx`, `PetOwnerDetail.jsx` (edit/remove owner UI) |
+| **Mingoy** | Start `MedicalRecords.jsx` shell + `MedRecSidebar.jsx` in-page nav |
+
+**Exit criteria:** Admin can see today's appointments/stats, click into any appointment to confirm/cancel, and click into any owner to see their pets.
+
+---
+
+### Sprint 4 (Days 7–8) — Medical Records, Billing & Polish
+
+**Goal:** Complete remaining feature set, then stabilize.
+
+| Owner | Tasks |
+|-------|-------|
+| **Mingoy** | `VaccineHistory.jsx`, `Billing.jsx` (customer-facing) wired into `MedicalRecords.jsx` |
+| **Golez** | `BillingReports.jsx`, `BillingRecords.jsx` (admin-facing) |
+| **Quezon** | Cross-cutting QA: verify all 12 routes in `MainContent.jsx`, test admin/customer session isolation, fix any styling regressions in `App.css` |
+| **All** | Bug bash — click through every page, fix broken links/props, remove duplicate/dead files (e.g. the empty `src/components/customer/CustomerDashboard.jsx` and the stray root-level `src/CustomerDashboard.jsx`/`.css` that duplicate `Dashboard.jsx`) |
+
+**Exit criteria:** All features complete, no dead files, all routes functional, both portals fully navigable.
+
+---
+
 ## 📝 Notes
 - Admin Primary Color Design is (Yellow Green / Green) | Customer Primary Color Design is (Sky Blue ) : pwede ramu mag add ug other primary color       aslong ma anagay sa design.
 - Authentication uses a **hardcoded array** in `src/users.js` — no backend/database required for now.
