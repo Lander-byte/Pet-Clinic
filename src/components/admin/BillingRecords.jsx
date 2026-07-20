@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import billedIcon from "./images/billed.svg";
+import collectedIcon from "./images/collected.svg";
+import outstandingIcon from "./images/outstanding.svg";
+import closeIcon from "./images/close.svg";
 
 const initialRecords = [
   { id: 1, date: '2026-06-25', owner: 'Juan dela Cruz', pet: 'Buddy',    service: 'Vaccination',     amount: 500,    status: 'Paid'    },
@@ -31,21 +35,21 @@ function BillingRecords() {
       {/* ── Summary Cards ── */}
       <div className="billing-stats">
         <div className="billing-stat-card">
-          <span className="billing-stat-icon">💰</span>
+          <img src={billedIcon} alt="Total Billed" className="billing-stat-icon" style={{ width: '30px', height: '30px' }} />
           <div className="billing-stat-info">
             <span className="billing-stat-value">{formatCurrency(totalBilled)}</span>
             <span className="billing-stat-label">Total Billed</span>
           </div>
         </div>
         <div className="billing-stat-card">
-          <span className="billing-stat-icon">✅</span>
+          <img src={collectedIcon} alt="Collected" className="billing-stat-icon" style={{ width: '30px', height: '30px' }} />
           <div className="billing-stat-info">
             <span className="billing-stat-value">{formatCurrency(totalPaid)}</span>
             <span className="billing-stat-label">Collected</span>
           </div>
         </div>
         <div className="billing-stat-card">
-          <span className="billing-stat-icon">⏳</span>
+          <img src={outstandingIcon} alt="Outstanding" className="billing-stat-icon" style={{ width: '30px', height: '30px' }} />
           <div className="billing-stat-info">
             <span className="billing-stat-value">{formatCurrency(totalDue)}</span>
             <span className="billing-stat-label">Outstanding</span>
@@ -100,7 +104,9 @@ function BillingRecords() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h2>Billing Detail</h2>
-              <button className="close-btn" onClick={() => setViewRecord(null)}>✕</button>
+              <button className="close-btn" onClick={() => setViewRecord(null)}>
+                <img src={closeIcon} alt="Close" style={{ width: '14px', height: '14px' }} />
+              </button>
             </div>
             <div className="pay-invoice-summary">
               {[

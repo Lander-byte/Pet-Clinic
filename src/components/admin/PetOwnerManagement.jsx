@@ -26,7 +26,6 @@ function PetOwnerManagement() {
 
       {/* ── Search Bar ── */}
       <div className="search-bar-container">
-        <span className="search-bar-icon">🔍</span>
         <input
           type="text"
           className="search-bar-input"

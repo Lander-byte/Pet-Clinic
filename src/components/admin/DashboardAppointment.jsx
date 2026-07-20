@@ -11,7 +11,7 @@ const todayAppointments = [
 function DashboardAppointment() {
   return (
     <div className="card dashboard-appointment">
-      <h2 className="card-title">📅 Appointments Today</h2>
+      <h2 className="card-title">Appointments Today</h2>
       <div className="table-container">
         <table className="data-table">
           <thead>

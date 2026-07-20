@@ -79,7 +79,6 @@ function PetManagement() {
       {/* ── Search + Add ── */}
       <div className="management-toolbar">
         <div className="search-bar-container" style={{ flex: 1, marginBottom: 0 }}>
-          <span className="search-bar-icon">🔍</span>
           <input
             type="text"
             className="search-bar-input"
