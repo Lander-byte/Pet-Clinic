@@ -49,7 +49,7 @@ function DashboardRecords() {
       {/* ── Monthly Revenue Chart ── */}
       <h3 className="card-title">
   <img src={revenueIcon} alt="Clinic Records" className="card-title-icon" style={{ width: '30px', height: '30px' }} />
-  Clinic Record
+  Monthly Revenue
 </h3>
       <div className="revenue-chart">
         {monthlyRevenue.map((m) => {
