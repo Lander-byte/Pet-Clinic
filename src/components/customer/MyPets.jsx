@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import PetCard from './PetCard';
+import dogIcon from './images/dog.svg';
+import catIcon from './images/cat.svg';
+import fishIcon from './images/fish.svg';
 
 const defaultPets = [
-  { id: 1, name: 'Buddy',    species: 'Dog',  breed: 'Labrador',    age: 3, image: '🐶' },
-  { id: 2, name: 'Whiskers', species: 'Cat',  breed: 'Persian',     age: 5, image: '🐱' },
-  { id: 3, name: 'Goldie',   species: 'Fish', breed: 'Goldfish',    age: 1, image: '🐟' },
+  { id: 1, name: 'Buddy',    species: 'Dog',  breed: 'Labrador',    age: 3, image: dogIcon },
+  { id: 2, name: 'Whiskers', species: 'Cat',  breed: 'Persian',     age: 5, image: catIcon },
+  { id: 3, name: 'Goldie',   species: 'Fish', breed: 'Goldfish',    age: 1, image: fishIcon },
 ];
 
 function MyPets() {

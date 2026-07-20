@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { mockUsers } from '../../users';
+import arrowLeftIcon from './images/arrow-left.svg';
 
 // Paw Logo SVG Component
 const PawLogo = () => (
@@ -46,7 +47,7 @@ function Login({ onLogin }) {
       {/* Right Form Panel */}
       <div className="auth-right-panel">
         <div className="auth-form-container">
-          <Link to="/" className="back-link">← Back to Portal Selection</Link>
+          <Link to="/" className="back-link"><img src={arrowLeftIcon} alt="" className="back-link-icon" style={{ width: "14px", height: "14px", objectFit: "contain" }} /> Back to Portal Selection</Link>
           <h2 className="auth-welcome-text">Welcome!</h2>
           
           <form className="auth-form" onSubmit={handleSubmit}>

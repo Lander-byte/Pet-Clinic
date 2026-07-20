@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import walletIcon from './images/wallet.svg';
+import checkIcon from './images/check.svg';
+import clockIcon from './images/clock.svg';
+import warningIcon from './images/warning.svg';
+import closeIcon from './images/close.svg';
+import cashIcon from './images/cash.svg';
+import mobileIcon from './images/mobile.svg';
 
 const initialInvoices = [
   { id: 'INV-2026-001', pet: 'Buddy',    service: 'Wellness Check',  date: '2026-07-10', amount: 800,    status: 'Pending'  },
@@ -45,28 +52,28 @@ function Billing() {
       {/* ── Payment Status Summary ── */}
       <div className="billing-stats">
         <div className="billing-stat-card">
-          <span className="billing-stat-icon">💰</span>
+          <img src={walletIcon} alt="" className="billing-stat-icon" style={{ width: "24px", height: "24px", objectFit: "contain" }} />
           <div className="billing-stat-info">
             <span className="billing-stat-value">{formatCurrency(totalDue)}</span>
             <span className="billing-stat-label">Total Due</span>
           </div>
         </div>
         <div className="billing-stat-card">
-          <span className="billing-stat-icon">✅</span>
+          <img src={checkIcon} alt="" className="billing-stat-icon" style={{ width: "24px", height: "24px", objectFit: "contain" }} />
           <div className="billing-stat-info">
             <span className="billing-stat-value">{formatCurrency(totalPaid)}</span>
             <span className="billing-stat-label">Total Paid</span>
           </div>
         </div>
         <div className="billing-stat-card">
-          <span className="billing-stat-icon">⏳</span>
+          <img src={clockIcon} alt="" className="billing-stat-icon" style={{ width: "24px", height: "24px", objectFit: "contain" }} />
           <div className="billing-stat-info">
             <span className="billing-stat-value">{pendingCount}</span>
             <span className="billing-stat-label">Pending</span>
           </div>
         </div>
         <div className="billing-stat-card">
-          <span className="billing-stat-icon">⚠️</span>
+          <img src={warningIcon} alt="" className="billing-stat-icon" style={{ width: "24px", height: "24px", objectFit: "contain" }} />
           <div className="billing-stat-info">
             <span className="billing-stat-value">{overdueCount}</span>
             <span className="billing-stat-label">Overdue</span>
@@ -127,7 +134,7 @@ function Billing() {
               <>
                 <div className="modal-header">
                   <h2>Pay Bill</h2>
-                  <button className="close-btn" onClick={closeModal}>✕</button>
+                  <button className="close-btn" onClick={closeModal}><img src={closeIcon} alt="Close" style={{ width: "14px", height: "14px", objectFit: "contain" }} /></button>
                 </div>
 
                 <div className="pay-invoice-summary">
@@ -156,7 +163,7 @@ function Billing() {
                       className={`pay-method-btn ${payMethod === 'cash' ? 'selected' : ''}`}
                       onClick={() => setPayMethod('cash')}
                     >
-                      <span className="pay-method-icon">💵</span>
+                      <img src={cashIcon} alt="" className="pay-method-icon" style={{ width: "24px", height: "24px", objectFit: "contain" }} />
                       <span className="pay-method-label">Cash</span>
                       <span className="pay-method-desc">Pay at the clinic counter</span>
                     </button>
@@ -164,7 +171,7 @@ function Billing() {
                       className={`pay-method-btn ${payMethod === 'ewallet' ? 'selected' : ''}`}
                       onClick={() => setPayMethod('ewallet')}
                     >
-                      <span className="pay-method-icon">📱</span>
+                      <img src={mobileIcon} alt="" className="pay-method-icon" style={{ width: "24px", height: "24px", objectFit: "contain" }} />
                       <span className="pay-method-label">E-Wallet</span>
                       <span className="pay-method-desc">GCash, Maya, or PayPal</span>
                     </button>
@@ -186,7 +193,7 @@ function Billing() {
             ) : (
               <>
                 <div className="pay-receipt">
-                  <div className="pay-receipt-icon">✅</div>
+                  <img src={checkIcon} alt="" className="pay-receipt-icon" style={{ width: "40px", height: "40px", objectFit: "contain" }} />
                   <h2>Payment Successful!</h2>
                   <p className="pay-receipt-sub">Your payment has been recorded.</p>
 
@@ -201,7 +208,7 @@ function Billing() {
                     </div>
                     <div className="pay-invoice-row">
                       <span>Method</span>
-                      <strong>{payMethod === 'cash' ? '💵 Cash' : '📱 E-Wallet'}</strong>
+                      <strong>{payMethod === 'cash' ? 'Cash' : 'E-Wallet'}</strong>
                     </div>
                   </div>
 

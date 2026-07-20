@@ -15,11 +15,11 @@ const PawLogoSmall = () => (
 );
 
 const navItems = [
-  { path: '/dashboard',       label: 'Dashboard',        icon: '🏠' },
-  { path: '/my-pets',         label: 'My Pets',          icon: '🐾' },
-  { path: '/appointments',    label: 'Appointments',     icon: '📅' },
-  { path: '/medical-records', label: 'Medical Records',  icon: '📋' },
-  { path: '/billing',         label: 'Billing',          icon: '💳' },
+  { path: '/dashboard',       label: 'Dashboard' },
+  { path: '/my-pets',         label: 'My Pets' },
+  { path: '/appointments',    label: 'Appointments' },
+  { path: '/medical-records', label: 'Medical Records' },
+  { path: '/billing',         label: 'Billing' },
 ];
 
 function CustomerSidebar({ onLogout }) {
@@ -31,7 +31,7 @@ function CustomerSidebar({ onLogout }) {
       </div>
 
       <nav className="sidebar-nav">
-        {navItems.map(({ path, label, icon }) => (
+        {navItems.map(({ path, label }) => (
           <NavLink
             key={path}
             to={path}
@@ -39,7 +39,6 @@ function CustomerSidebar({ onLogout }) {
               `sidebar-link ${isActive ? 'active' : ''}`
             }
           >
-            <span className="sidebar-icon">{icon}</span>
             <span className="sidebar-label">{label}</span>
           </NavLink>
         ))}
@@ -47,7 +46,6 @@ function CustomerSidebar({ onLogout }) {
 
       <div className="sidebar-footer">
         <Link to="/" onClick={onLogout} className="sidebar-link logout">
-          <span className="sidebar-icon">🚪</span>
           <span className="sidebar-label">Logout</span>
         </Link>
       </div>

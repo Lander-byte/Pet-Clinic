@@ -1,4 +1,5 @@
 import React from 'react';
+import AppointmentDetail from './AppointmentDetail';
 
 const sampleAppointments = [
   { id: 1, pet: 'Buddy',    service: 'Wellness Check',  date: '2026-07-10', time: '10:00 AM', vet: 'Dr. Santos',  status: 'Confirmed' },
@@ -26,18 +27,7 @@ function Appointment() {
           </thead>
           <tbody>
             {sampleAppointments.map(appt => (
-              <tr key={appt.id}>
-                <td>{appt.pet}</td>
-                <td>{appt.service}</td>
-                <td>{appt.date}</td>
-                <td>{appt.time}</td>
-                <td>{appt.vet}</td>
-                <td>
-                  <span className={`status-badge status-${appt.status.toLowerCase()}`}>
-                    {appt.status}
-                  </span>
-                </td>
-              </tr>
+              <AppointmentDetail key={appt.id} appointment={appt} />
             ))}
           </tbody>
         </table>

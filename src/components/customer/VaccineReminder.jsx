@@ -1,4 +1,5 @@
 import React from 'react';
+import syringeIcon from './images/syringe.svg';
 
 function VaccineReminder() {
   const reminders = [
@@ -8,7 +9,7 @@ function VaccineReminder() {
 
   return (
     <div className="card vaccine-reminder">
-      <h2 className="card-title">💉 Vaccine Reminders</h2>
+      <h2 className="card-title"><img src={syringeIcon} alt="" className="title-icon" style={{ width: "18px", height: "18px", objectFit: "contain" }} /> Vaccine Reminders</h2>
       <ul className="reminder-list">
         {reminders.map((r, i) => (
           <li key={i} className="reminder-item">

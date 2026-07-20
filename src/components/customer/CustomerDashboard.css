@@ -172,11 +172,13 @@
 }
 
 .dash-header::after {
-  content: "🐾";
+  content: "";
   position: absolute;
   right: -10px;
   top: -18px;
-  font-size: 140px;
+  width: 140px;
+  height: 140px;
+  background: url("./images/paw.svg") no-repeat center / contain;
   opacity: 0.12;
   transform: rotate(-12deg);
 }
@@ -460,8 +462,15 @@
 }
 
 .dash-footer .paw-divider {
-  letter-spacing: 10px;
-  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
   opacity: 0.5;
-  margin-bottom: 8px;
+}
+
+.dash-footer .paw-divider img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }

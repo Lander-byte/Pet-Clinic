@@ -6,7 +6,7 @@ function PetsMiniCard({ pet, onSelect, isSelected }) {
       className={`pets-mini-card ${isSelected ? 'selected' : ''}`}
       onClick={onSelect}
     >
-      <span className="mini-icon">{pet.image}</span>
+      <img src={pet.image} alt="" className="mini-icon" style={{ width: "28px", height: "28px", objectFit: "contain" }} />
       <span className="mini-name">{pet.name}</span>
       <span className="mini-species">{pet.species}</span>
     </button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import calendarIcon from './images/calendar.svg';
 
 function UpcomingAppointment() {
   const appointments = [
@@ -8,7 +9,7 @@ function UpcomingAppointment() {
 
   return (
     <div className="card upcoming-appointment">
-      <h2 className="card-title">📅 Upcoming Appointments</h2>
+      <h2 className="card-title"><img src={calendarIcon} alt="" className="title-icon" style={{ width: "18px", height: "18px", objectFit: "contain" }} /> Upcoming Appointments</h2>
       <ul className="appointment-list">
         {appointments.map((a, i) => (
           <li key={i} className="appointment-item">

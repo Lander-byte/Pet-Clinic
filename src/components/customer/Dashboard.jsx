@@ -3,11 +3,20 @@ import VaccineReminder from './VaccineReminder';
 import UpcomingAppointment from './UpcomingAppointment';
 import PetsMiniCard from './PetsMiniCard';
 import PetCard from './PetCard';
+import dogIcon from './images/dog.svg';
+import catIcon from './images/cat.svg';
+import fishIcon from './images/fish.svg';
+import birdIcon from './images/bird.svg';
+import rabbitIcon from './images/rabbit.svg';
+import hamsterIcon from './images/hamster.svg';
+import pawIcon from './images/paw.svg';
+import plusIcon from './images/plus.svg';
+import closeIcon from './images/close.svg';
 
 const defaultPets = [
-  { id: 1, name: 'Buddy',    species: 'Dog',  breed: 'Labrador',    age: 3, image: '🐶' },
-  { id: 2, name: 'Whiskers', species: 'Cat',  breed: 'Persian',     age: 5, image: '🐱' },
-  { id: 3, name: 'Goldie',   species: 'Fish', breed: 'Goldfish',    age: 1, image: '🐟' },
+  { id: 1, name: 'Buddy',    species: 'Dog',  breed: 'Labrador',    age: 3, image: dogIcon },
+  { id: 2, name: 'Whiskers', species: 'Cat',  breed: 'Persian',     age: 5, image: catIcon },
+  { id: 3, name: 'Goldie',   species: 'Fish', breed: 'Goldfish',    age: 1, image: fishIcon },
 ];
 
 function Dashboard() {
@@ -29,22 +38,22 @@ function Dashboard() {
   const [newPetSpecies, setNewPetSpecies] = useState('Dog');
   const [newPetBreed, setNewPetBreed] = useState('');
   const [newPetAge, setNewPetAge] = useState('');
-  const [newPetEmoji, setNewPetEmoji] = useState('🐶');
+  const [newPetEmoji, setNewPetEmoji] = useState(dogIcon);
 
   const speciesEmojis = {
-    Dog: '🐶',
-    Cat: '🐱',
-    Fish: '🐟',
-    Bird: '🦜',
-    Rabbit: '🐰',
-    Hamster: '🐹',
-    Other: '🐾'
+    Dog: dogIcon,
+    Cat: catIcon,
+    Fish: fishIcon,
+    Bird: birdIcon,
+    Rabbit: rabbitIcon,
+    Hamster: hamsterIcon,
+    Other: pawIcon
   };
 
   const handleSpeciesChange = (e) => {
     const species = e.target.value;
     setNewPetSpecies(species);
-    setNewPetEmoji(speciesEmojis[species] || '🐾');
+    setNewPetEmoji(speciesEmojis[species] || pawIcon);
   };
 
   const handleAddPet = (e) => {
@@ -69,7 +78,7 @@ function Dashboard() {
     setNewPetSpecies('Dog');
     setNewPetBreed('');
     setNewPetAge('');
-    setNewPetEmoji('🐶');
+    setNewPetEmoji(dogIcon);
     setShowAddModal(false);
   };
 
@@ -85,7 +94,7 @@ function Dashboard() {
 
       {/* Mini Pets section */}
       <section className="card" style={{ marginTop: '2rem' }}>
-        <h2 className="card-title">🐾 My Pets</h2>
+        <h2 className="card-title"><img src={pawIcon} alt="" className="title-icon" style={{ width: "18px", height: "18px", objectFit: "contain" }} /> My Pets</h2>
         <div className="pets-mini-list">
           {pets.map(pet => (
             <PetsMiniCard
@@ -96,7 +105,7 @@ function Dashboard() {
             />
           ))}
           <button className="pets-mini-card add-pet-btn" onClick={() => setShowAddModal(true)}>
-            <span className="mini-icon">➕</span>
+            <img src={plusIcon} alt="" className="mini-icon" style={{ width: "20px", height: "20px", objectFit: "contain" }} />
             <span className="mini-name" style={{ fontWeight: '600', color: 'var(--accent-rust)' }}>Add Pet</span>
             <span className="mini-species">New Register</span>
           </button>
@@ -116,7 +125,7 @@ function Dashboard() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h2>Add a New Pet</h2>
-              <button className="close-btn" onClick={() => setShowAddModal(false)}>✕</button>
+              <button className="close-btn" onClick={() => setShowAddModal(false)}><img src={closeIcon} alt="Close" style={{ width: "14px", height: "14px", objectFit: "contain" }} /></button>
             </div>
             <form onSubmit={handleAddPet} className="modal-form">
               <label>
@@ -133,13 +142,13 @@ function Dashboard() {
               <label>
                 Species
                 <select value={newPetSpecies} onChange={handleSpeciesChange}>
-                  <option value="Dog">Dog 🐶</option>
-                  <option value="Cat">Cat 🐱</option>
-                  <option value="Fish">Fish 🐟</option>
-                  <option value="Bird">Bird 🦜</option>
-                  <option value="Rabbit">Rabbit 🐰</option>
-                  <option value="Hamster">Hamster 🐹</option>
-                  <option value="Other">Other 🐾</option>
+                  <option value="Dog">Dog</option>
+                  <option value="Cat">Cat</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Bird">Bird</option>
+                  <option value="Rabbit">Rabbit</option>
+                  <option value="Hamster">Hamster</option>
+                  <option value="Other">Other</option>
                 </select>
               </label>
 
@@ -167,16 +176,16 @@ function Dashboard() {
               </label>
 
               <label>
-                Choose Avatar Emoji
+                Choose Avatar Icon
                 <div className="emoji-selector">
-                  {Object.values(speciesEmojis).map((emoji) => (
+                  {Object.values(speciesEmojis).map((icon) => (
                     <button
-                      key={emoji}
+                      key={icon}
                       type="button"
-                      className={`emoji-btn ${newPetEmoji === emoji ? 'selected' : ''}`}
-                      onClick={() => setNewPetEmoji(emoji)}
+                      className={`emoji-btn ${newPetEmoji === icon ? 'selected' : ''}`}
+                      onClick={() => setNewPetEmoji(icon)}
                     >
-                      {emoji}
+                      <img src={icon} alt="" style={{ width: "22px", height: "22px", objectFit: "contain" }} />
                     </button>
                   ))}
                 </div>

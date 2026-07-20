@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PortalSelection.css';
+import pawIcon from './images/paw.svg';
+import stethoscopeIcon from './images/stethoscope.svg';
 
 // Paw Logo SVG Component
 const PawLogo = () => (
@@ -30,7 +32,7 @@ function PortalSelection() {
           className="portal-card customer-portal" 
           onClick={() => navigate('/login')}
         >
-          <div className="portal-card-icon">🐾</div>
+          <img src={pawIcon} alt="" className="portal-card-icon" style={{ width: "48px", height: "48px", objectFit: "contain" }} />
           <h2>Customer Portal</h2>
           <p>Book appointments, view medical records, and manage your pets' vaccine history.</p>
           <button className="portal-btn btn-customer">
@@ -42,7 +44,7 @@ function PortalSelection() {
           className="portal-card admin-portal" 
           onClick={() => navigate('/admin/login')}
         >
-          <div className="portal-card-icon">🩺</div>
+          <img src={stethoscopeIcon} alt="" className="portal-card-icon" style={{ width: "48px", height: "48px", objectFit: "contain" }} />
           <h2>Admin Portal</h2>
           <p>Manage appointments, update billing records, and view pet owners' information.</p>
           <button className="portal-btn btn-admin">
