@@ -17,9 +17,9 @@ const monthlyRevenue = [
 
 function DashboardRecords() {
   const stats = [
-    { label: 'Total Patients',     value: 142, icon: pawIcon },              // ✅ using imported paw icon
-    { label: 'Active Pet Owners',  value: 89,  icon: ownerIcon }, // 👈 people/owners icon link
-    { label: 'Records This Month', value: 36,  icon: recordIcon }, // 👈 clipboard/records icon link
+    { label: 'Total Patients',     value: 142, icon: pawIcon },
+    { label: 'Active Pet Owners',  value: 89,  icon: ownerIcon },
+    { label: 'Records This Month', value: 36,  icon: recordIcon },
   ];
 
   const maxRevenue = Math.max(...monthlyRevenue.map(m => m.amount));
