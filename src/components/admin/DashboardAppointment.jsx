@@ -1,4 +1,5 @@
 import React from 'react';
+import DashboardAppointmentRow from './DashboardAppointmentRow';
 
 const todayAppointments = [
   { time: '9:00 AM',  pet: 'Buddy',    owner: 'Juan dela Cruz', service: 'Wellness Check',  status: 'Confirmed' },
@@ -25,17 +26,10 @@ function DashboardAppointment() {
           </thead>
           <tbody>
             {todayAppointments.map((a, i) => (
-              <tr key={i}>
-                <td style={{ fontWeight: 600 }}>{a.time}</td>
-                <td>{a.pet}</td>
-                <td>{a.owner}</td>
-                <td>{a.service}</td>
-                <td>
-                  <span className={`status-badge status-${a.status.toLowerCase()}`}>
-                    {a.status}
-                  </span>
-                </td>
-              </tr>
+              <DashboardAppointmentRow
+                key={i}
+                appointment={a}
+              />
             ))}
           </tbody>
         </table>

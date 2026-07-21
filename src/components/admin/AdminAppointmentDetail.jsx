@@ -9,11 +9,11 @@ function AdminAppointmentDetail({ appointment, onClose }) {
       </div>
       <div className="detail-panel-body">
         {[
-          ['Pet',          appointment.pet],
-          ['Owner',        appointment.owner],
-          ['Service',      appointment.service],
-          ['Date',         appointment.date],
-          ['Time',         appointment.time],
+          ['Pet', appointment.pet],
+          ['Owner', appointment.owner],
+          ['Service', appointment.service],
+          ['Date', appointment.date],
+          ['Time', appointment.time],
           ['Veterinarian', appointment.vet],
         ].map(([label, value]) => (
           <div key={label} className="detail-row">

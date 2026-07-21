@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AppointmentRow from './AppointmentRow';
 import AdminAppointmentDetail from './AdminAppointmentDetail';
 
 const appointments = [
@@ -30,23 +31,11 @@ function AppointmentManagement() {
           </thead>
           <tbody>
             {appointments.map(appt => (
-              <tr
+              <AppointmentRow
                 key={appt.id}
-                className="clickable-row"
+                appointment={appt}
                 onClick={() => setSelected(appt)}
-              >
-                <td>{appt.pet}</td>
-                <td>{appt.owner}</td>
-                <td>{appt.service}</td>
-                <td>{appt.date}</td>
-                <td>{appt.time}</td>
-                <td>{appt.vet}</td>
-                <td>
-                  <span className={`status-badge status-${appt.status.toLowerCase()}`}>
-                    {appt.status}
-                  </span>
-                </td>
-              </tr>
+              />
             ))}
           </tbody>
         </table>

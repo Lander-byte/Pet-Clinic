@@ -1,5 +1,6 @@
 import React from 'react';
-import DashboardRecords from './DashboardRecords';
+import ClinicRecord from './ClinicRecord';
+import MonthlyRevenue from './MonthlyRevenue';
 import DashboardAppointment from './DashboardAppointment';
 
 function AdminDashboard() {
@@ -8,7 +9,11 @@ function AdminDashboard() {
       <h1>Admin Dashboard</h1>
       <p className="page-subtitle">Overview of clinic activity and records.</p>
 
-      <DashboardRecords />
+      <ClinicRecord />
+
+      <div style={{ marginTop: '1.5rem' }}>
+        <MonthlyRevenue />
+      </div>
 
       <div style={{ marginTop: '1.5rem' }}>
         <DashboardAppointment />
