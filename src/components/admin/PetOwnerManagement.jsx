@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import PetOwnerDetail from './PetOwnerDetail';
+<<<<<<< HEAD
 import PetOwnerRow from './PetOwnerRow';
+=======
+>>>>>>> 3aae46a63274f2280a158b30ff0a4000dcd59137
 
 const petOwners = [
   { id: 1, name: 'Juan dela Cruz', email: 'juan@email.com', pets: ['Buddy', 'Max'],      phone: '09171234567', status: 'Active'   },
@@ -54,11 +57,33 @@ function PetOwnerManagement() {
           <tbody>
             {filtered.length > 0 ? (
               filtered.map(owner => (
+<<<<<<< HEAD
                 <PetOwnerRow
                   key={owner.id}
                   owner={owner}
                   onView={() => setSelected(owner)}
                 />
+=======
+                <tr key={owner.id}>
+                  <td style={{ fontWeight: 600 }}>{owner.name}</td>
+                  <td>{owner.phone}</td>
+                  <td>{owner.email}</td>
+                  <td>{owner.pets.length}</td>
+                  <td>
+                    <span className={`status-badge status-${owner.status.toLowerCase()}`}>
+                      {owner.status}
+                    </span>
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-primary btn-sm"
+                      onClick={() => setSelected(owner)}
+                    >
+                      View
+                    </button>
+                  </td>
+                </tr>
+>>>>>>> 3aae46a63274f2280a158b30ff0a4000dcd59137
               ))
             ) : (
               <tr>
