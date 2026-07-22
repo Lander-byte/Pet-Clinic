@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PetOwnerDetail from './PetOwnerDetail';
-import PetOwnerRow from './PetOwnerManagementRow';
+import PetOwnerManagementRow from './PetOwnerManagementRow';
 
 const petOwners = [
   { id: 1, name: 'Juan dela Cruz', email: 'juan@email.com', pets: ['Buddy', 'Max'], phone: '09171234567', status: 'Active' },
@@ -54,7 +54,7 @@ function PetOwnerManagement() {
           <tbody>
             {filtered.length > 0 ? (
               filtered.map(owner => (
-                <PetOwnerRow
+                <PetOwnerManagementRow
                   key={owner.id}
                   owner={owner}
                   onView={() => setSelected(owner)}

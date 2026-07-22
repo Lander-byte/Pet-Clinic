@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PetRow from './PetManagementRow';
+import PetManagementRow from './PetManagementRow';
 
 const initialPets = [
   { id: 1, name: 'Buddy', species: 'Dog', breed: 'Golden Retriever', age: 3, owner: 'Juan dela Cruz', status: 'Active' },
@@ -70,7 +70,7 @@ function PetManagement() {
           <tbody>
             {filtered.length > 0 ? (
               filtered.map(pet => (
-                <PetRow
+                <PetManagementRow
                   key={pet.id}
                   pet={pet}
                   onToggleStatus={() => toggleStatus(pet.id)}
