@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-
-
+import { Link, NavLink } from 'react-router-dom';
 
 const PawLogoSmall = () => (
   <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,14 +12,6 @@ const PawLogoSmall = () => (
   </svg>
 );
 
-const navItems = [
-  { path: '/dashboard',       label: 'Dashboard' },
-  { path: '/my-pets',         label: 'My Pets' },
-  { path: '/appointments',    label: 'Appointments' },
-  { path: '/medical-records', label: 'Medical Records' },
-  { path: '/billing',         label: 'Billing' },
-];
-
 function CustomerSidebar({ onLogout }) {
   return (
     <aside className="sidebar">
@@ -32,17 +21,40 @@ function CustomerSidebar({ onLogout }) {
       </div>
 
       <nav className="sidebar-nav">
-        {navItems.map(({ path, label }) => (
-          <NavLink
-            key={path}
-            to={path}
-            className={({ isActive }) =>
-              `sidebar-link ${isActive ? 'active' : ''}`
-            }
-          >
-            <span className="sidebar-label">{label}</span>
-          </NavLink>
-        ))}
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+        >
+          <span className="sidebar-label">Dashboard</span>
+        </NavLink>
+
+        <NavLink
+          to="/my-pets"
+          className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+        >
+          <span className="sidebar-label">My Pets</span>
+        </NavLink>
+
+        <NavLink
+          to="/appointments"
+          className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+        >
+          <span className="sidebar-label">Appointments</span>
+        </NavLink>
+
+        <NavLink
+          to="/medical-records"
+          className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+        >
+          <span className="sidebar-label">Medical Records</span>
+        </NavLink>
+
+        <NavLink
+          to="/billing"
+          className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+        >
+          <span className="sidebar-label">Billing</span>
+        </NavLink>
       </nav>
 
       <div className="sidebar-footer">

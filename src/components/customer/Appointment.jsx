@@ -1,5 +1,5 @@
 import React from 'react';
-import AppointmentDetail from './AppointmentDetail';
+import AppointmentRow from './AppointmentRow';
 
 const sampleAppointments = [
   { id: 1, pet: 'Buddy',    service: 'Wellness Check',  date: '2026-07-10', time: '10:00 AM', vet: 'Dr. Santos',  status: 'Confirmed' },
@@ -27,7 +27,7 @@ function Appointment() {
           </thead>
           <tbody>
             {sampleAppointments.map(appt => (
-              <AppointmentDetail key={appt.id} appointment={appt} />
+              <AppointmentRow key={appt.id} appointment={appt} />
             ))}
           </tbody>
         </table>

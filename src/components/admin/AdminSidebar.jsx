@@ -39,7 +39,7 @@ export default function AdminSidebar({ onLogout }) {
 
       <div className="sidebar-footer">
         <Link to="/" onClick={onLogout} className="sidebar-link logout">
-          <span>Logout</span>
+          <span className="sidebar-label">Logout</span>
         </Link>
       </div>
     </div>

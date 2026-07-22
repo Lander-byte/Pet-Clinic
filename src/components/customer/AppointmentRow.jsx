@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AppointmentDetail({ appointment }) {
+function AppointmentRow({ appointment }) {
   const { pet, service, date, time, vet, status } = appointment;
 
   return (
@@ -19,4 +19,4 @@ function AppointmentDetail({ appointment }) {
   );
 }
 
-export default AppointmentDetail;
+export default AppointmentRow;

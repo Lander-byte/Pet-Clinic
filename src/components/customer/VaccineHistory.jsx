@@ -1,9 +1,10 @@
 import React from 'react';
+import VaccinationRow from './VaccinationRow';
 
 const vaccineRecords = [
-  { pet: 'Buddy',    vaccine: 'Rabies',  date: '2025-01-10', nextDue: '2026-01-10', vet: 'Dr. Santos' },
-  { pet: 'Buddy',    vaccine: 'DHPP',    date: '2025-03-05', nextDue: '2026-03-05', vet: 'Dr. Santos' },
-  { pet: 'Whiskers', vaccine: 'FVRCP',   date: '2025-02-14', nextDue: '2026-02-14', vet: 'Dr. Reyes'  },
+  { id: 1, pet: 'Buddy',    vaccine: 'Rabies', date: '2025-01-10', nextDue: '2026-01-10', vet: 'Dr. Santos' },
+  { id: 2, pet: 'Buddy',    vaccine: 'DHPP',   date: '2025-03-05', nextDue: '2026-03-05', vet: 'Dr. Santos' },
+  { id: 3, pet: 'Whiskers', vaccine: 'FVRCP',  date: '2025-02-14', nextDue: '2026-02-14', vet: 'Dr. Reyes'  },
 ];
 
 function VaccineHistory() {
@@ -22,14 +23,8 @@ function VaccineHistory() {
             </tr>
           </thead>
           <tbody>
-            {vaccineRecords.map((r, i) => (
-              <tr key={i}>
-                <td>{r.pet}</td>
-                <td>{r.vaccine}</td>
-                <td>{r.date}</td>
-                <td>{r.nextDue}</td>
-                <td>{r.vet}</td>
-              </tr>
+            {vaccineRecords.map(record => (
+              <VaccinationRow key={record.id} record={record} />
             ))}
           </tbody>
         </table>
