@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import BillingRecordRow from './BillingRecordRow';
-import TotalBilled from './TotalBilled';
-import Collected from './Collected';
-import Outstanding from './Outstanding';
+import BillingStatCard from './BillingStatCard';
 import BillingDetail from './BillingDetail';
+import billedIcon from './images/billed.svg';
+import collectedIcon from './images/collected.svg';
+import outstandingIcon from './images/outstanding.svg';
 
 const initialRecords = [
   { id: 1, date: '2026-06-25', owner: 'Juan dela Cruz', pet: 'Buddy',    service: 'Vaccination',     amount: 500,    status: 'Paid'    },
@@ -35,9 +36,9 @@ function BillingRecords() {
     <div className="section-content">
       {/* ── Summary Cards ── */}
       <div className="billing-stats">
-        <TotalBilled amount={totalBilled} formatCurrency={formatCurrency} />
-        <Collected amount={totalPaid} formatCurrency={formatCurrency} />
-        <Outstanding amount={totalDue} formatCurrency={formatCurrency} />
+        <BillingStatCard icon={billedIcon}      amount={totalBilled} label="Total Billed" formatCurrency={formatCurrency} />
+        <BillingStatCard icon={collectedIcon}   amount={totalPaid}   label="Collected"    formatCurrency={formatCurrency} />
+        <BillingStatCard icon={outstandingIcon} amount={totalDue}    label="Outstanding"  formatCurrency={formatCurrency} />
       </div>
 
       {/* ── Records Table ── */}

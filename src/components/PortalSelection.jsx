@@ -4,7 +4,6 @@ import './PortalSelection.css';
 import pawIcon from './images/paw.svg';
 import stethoscopeIcon from './images/stethoscope.svg';
 
-// Paw Logo SVG Component
 const PawLogo = () => (
   <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M49.9999 87.5C31.5422 87.5 16.6666 76.5417 16.6666 60.4167C16.6666 52.0833 22.9166 43.75 31.2499 43.75C34.4284 43.75 37.1425 45.4167 39.068 47.7818C42.2743 44.9351 46.0336 43.75 49.9999 43.75C53.9662 43.75 57.7255 44.9351 60.9317 47.7818C62.8573 45.4167 65.5714 43.75 68.7499 43.75C77.0833 43.75 83.3333 52.0833 83.3333 60.4167C83.3333 76.5417 68.4576 87.5 49.9999 87.5Z" fill="var(--accent-rust)"/>

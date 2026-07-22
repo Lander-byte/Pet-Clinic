@@ -1,4 +1,4 @@
-/* ── Reset & Base ─────────────────────────────────────────── */
+/* Reset & Base */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -8,12 +8,12 @@ body {
   min-height: 100vh;
 }
 
-/* ── Typography overrides ─────────────────────────────────── */
+/*Typography overrides*/
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
 }
 
-/* ── App Layout ───────────────────────────────────────────── */
+/*App Layout*/
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-/* ── Auth Split Screen Layout ─────────────────────────────── */
+/*Auth Split Screen Layout*/
 .auth-split-container {
   display: flex;
   width: 100%;
@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-/* ── Sidebar ──────────────────────────────────────────────── */
+/*Sidebar*/
 .sidebar {
   width: 250px;
   min-height: 100vh;
@@ -243,12 +243,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar-icon  { font-size: 1.15rem; }
 
-/* ── Pages ────────────────────────────────────────────────── */
+/*Pages*/
 .page { max-width: 1024px; margin: 0 auto; }
 .page h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--dark-slate); }
 .page-subtitle { color: #64748b; margin-bottom: 2rem; font-size: 1rem; }
 
-/* ── Cards ────────────────────────────────────────────────── */
+/*Cards*/
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
 .card { 
   background: var(--white); 
@@ -274,14 +274,14 @@ h1, h2, h3, h4, h5, h6 {
 .stat-value { font-size: 1.75rem; font-weight: 700; color: var(--accent-rust); font-family: 'Outfit', sans-serif; }
 .stat-label { font-size: 0.85rem; color: #64748b; text-align: center; }
 
-/* ── Buttons ──────────────────────────────────────────────── */
+/*Buttons*/
 .btn { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; font-size: 0.95rem; transition: all 0.2s; font-family: 'Inter', sans-serif;}
 .btn:hover          { opacity: 0.9; transform: translateY(-1px); }
 .btn-primary        { background: var(--primary-sage); color: var(--dark-slate); }
 .btn-success        { background: #16a34a; color: #fff; }
 .btn-danger         { background: var(--accent-rust); color: #fff; }
 
-/* ── My Pets ──────────────────────────────────────────────── */
+/*My Pets*/
 .pets-mini-list { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
 .pets-mini-card {
   display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 .pet-card-icon   { font-size: 3.5rem; }
 .pet-card-name   { font-size: 1.75rem; font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--dark-slate); }
 
-/* ── Tables ───────────────────────────────────────────────── */
+/*Tables*/
 .table-container { overflow-x: auto; margin-top: 1.5rem; }
 .data-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.95rem; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid var(--border-color); }
 .data-table th { background: var(--bg-gray); padding: 1rem 1.25rem; text-align: left; font-weight: 600; color: #475569; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-color); }
@@ -311,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
 .data-table .clickable-row { cursor: pointer; transition: background 0.2s; }
 .data-table .clickable-row:hover { background: var(--bg-gray); }
 
-/* ── Status Badges ────────────────────────────────────────── */
+/*Status Badges*/
 .status-badge { 
   min-width: 105px;
   height: 28px;
@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
 .status-completed { background: #dbeafe; color: #1d4ed8; }
 .status-paid      { background: var(--primary-sage); color: var(--dark-slate); }
 
-/* ── Detail Panel ─────────────────────────────────────────── */
+/*Detail Panel*/
 .detail-panel {
   background: var(--white); border-radius: 16px; padding: 2rem;
   margin-top: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.06); max-width: 550px;
@@ -345,7 +345,7 @@ h1, h2, h3, h4, h5, h6 {
 .detail-value { font-size: 0.95rem; color: var(--dark-slate); font-weight: 500;}
 .detail-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
 
-/* ── Medical Records Layout ───────────────────────────────── */
+/*Medical Records Layout*/
 .medical-records-page { max-width: 1100px; }
 .med-records-layout { display: flex; gap: 2rem; margin-top: 1.5rem; }
 .med-rec-sidebar { width: 220px; flex-shrink: 0; }

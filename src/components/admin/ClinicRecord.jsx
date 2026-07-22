@@ -1,8 +1,9 @@
 import React from 'react';
-import TotalPatients from './TotalPatients';
-import ActivePetOwners from './ActivePetOwners';
-import RecordsThisMonth from './RecordsThisMonth';
+import StatCard from './StatCard';
 import clinicIcon from "./images/clinic.svg";
+import pawIcon from "./images/paw.svg";
+import ownerIcon from "./images/owner.svg";
+import recordIcon from "./images/record.svg";
 
 export default function ClinicRecord() {
   return (
@@ -14,9 +15,9 @@ export default function ClinicRecord() {
 
       {/* ── Quick Stats ── */}
       <div className="stats-grid">
-        <TotalPatients value={142} />
-        <ActivePetOwners value={89} />
-        <RecordsThisMonth value={36} />
+        <StatCard icon={pawIcon}    value={142} label="Total Patients" />
+        <StatCard icon={ownerIcon}  value={89}  label="Active Pet Owners" />
+        <StatCard icon={recordIcon} value={36}  label="Records This Month" />
       </div>
     </div>
   );
