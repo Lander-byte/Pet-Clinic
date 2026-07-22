@@ -11,9 +11,9 @@ export default function BillingDetail({ record, formatCurrency, onClose, onMarkP
       </div>
       <div className="detail-panel-body">
         {[
-          ['Date',    record.date],
-          ['Owner',   record.owner],
-          ['Pet',     record.pet],
+          ['Date', record.date],
+          ['Owner', record.owner],
+          ['Pet', record.pet],
           ['Service', record.service],
         ].map(([label, value]) => (
           <div key={label} className="detail-row">

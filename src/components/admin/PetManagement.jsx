@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import PetRow from './PetRow';
 
 const initialPets = [
-  { id: 1, name: 'Buddy',    species: 'Dog',  breed: 'Golden Retriever', age: 3, owner: 'Juan dela Cruz', status: 'Active'   },
-  { id: 2, name: 'Whiskers', species: 'Cat',  breed: 'Persian',          age: 2, owner: 'Maria Santos',   status: 'Active'   },
-  { id: 3, name: 'Max',      species: 'Dog',  breed: 'Bulldog',          age: 5, owner: 'Pedro Reyes',    status: 'Active'   },
-  { id: 4, name: 'Goldie',   species: 'Fish', breed: 'Goldfish',         age: 1, owner: 'Pedro Reyes',    status: 'Active'   },
-  { id: 5, name: 'Luna',     species: 'Cat',  breed: 'Siamese',          age: 4, owner: 'Ana Garcia',     status: 'Inactive' },
-  { id: 6, name: 'Charlie',  species: 'Dog',  breed: 'Poodle',           age: 2, owner: 'Pedro Reyes',    status: 'Active'   },
-  { id: 7, name: 'Mochi',    species: 'Cat',  breed: 'Ragdoll',          age: 1, owner: 'Carlos Lim',     status: 'Active'   },
-  { id: 8, name: 'Biscuit',  species: 'Dog',  breed: 'Shih Tzu',         age: 6, owner: 'Carlos Lim',     status: 'Active'   },
+  { id: 1, name: 'Buddy', species: 'Dog', breed: 'Golden Retriever', age: 3, owner: 'Juan dela Cruz', status: 'Active' },
+  { id: 2, name: 'Whiskers', species: 'Cat', breed: 'Persian', age: 2, owner: 'Maria Santos', status: 'Active' },
+  { id: 3, name: 'Max', species: 'Dog', breed: 'Bulldog', age: 5, owner: 'Pedro Reyes', status: 'Active' },
+  { id: 4, name: 'Goldie', species: 'Fish', breed: 'Goldfish', age: 1, owner: 'Pedro Reyes', status: 'Active' },
+  { id: 5, name: 'Luna', species: 'Cat', breed: 'Siamese', age: 4, owner: 'Ana Garcia', status: 'Inactive' },
+  { id: 6, name: 'Charlie', species: 'Dog', breed: 'Poodle', age: 2, owner: 'Pedro Reyes', status: 'Active' },
+  { id: 7, name: 'Mochi', species: 'Cat', breed: 'Ragdoll', age: 1, owner: 'Carlos Lim', status: 'Active' },
+  { id: 8, name: 'Biscuit', species: 'Dog', breed: 'Shih Tzu', age: 6, owner: 'Carlos Lim', status: 'Active' },
 ];
 
 function PetManagement() {

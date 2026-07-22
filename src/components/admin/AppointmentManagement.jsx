@@ -3,9 +3,9 @@ import AppointmentRow from './AppointmentRow';
 import AdminAppointmentDetail from './AdminAppointmentDetail';
 
 const appointments = [
-  { id: 1, pet: 'Buddy',    owner: 'Juan dela Cruz', service: 'Wellness Check',  date: '2026-07-10', time: '9:00 AM',  vet: 'Dr. Santos', status: 'Confirmed' },
-  { id: 2, pet: 'Whiskers', owner: 'Maria Santos',   service: 'Dental Cleaning', date: '2026-07-10', time: '10:30 AM', vet: 'Dr. Reyes',  status: 'Pending'   },
-  { id: 3, pet: 'Max',      owner: 'Pedro Reyes',    service: 'Vaccination',     date: '2026-07-11', time: '2:00 PM',  vet: 'Dr. Santos', status: 'Confirmed' },
+  { id: 1, pet: 'Buddy', owner: 'Juan dela Cruz', service: 'Wellness Check', date: '2026-07-10', time: '9:00 AM', vet: 'Dr. Santos', status: 'Confirmed' },
+  { id: 2, pet: 'Whiskers', owner: 'Maria Santos', service: 'Dental Cleaning', date: '2026-07-10', time: '10:30 AM', vet: 'Dr. Reyes', status: 'Pending' },
+  { id: 3, pet: 'Max', owner: 'Pedro Reyes', service: 'Vaccination', date: '2026-07-11', time: '2:00 PM', vet: 'Dr. Santos', status: 'Confirmed' },
 ];
 
 function AppointmentManagement() {

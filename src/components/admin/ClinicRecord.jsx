@@ -15,9 +15,9 @@ export default function ClinicRecord() {
 
       {/* ── Quick Stats ── */}
       <div className="stats-grid">
-        <StatCard icon={pawIcon}    value={142} label="Total Patients" />
-        <StatCard icon={ownerIcon}  value={89}  label="Active Pet Owners" />
-        <StatCard icon={recordIcon} value={36}  label="Records This Month" />
+        <StatCard icon={pawIcon} value={142} label="Total Patients" />
+        <StatCard icon={ownerIcon} value={89} label="Active Pet Owners" />
+        <StatCard icon={recordIcon} value={36} label="Records This Month" />
       </div>
     </div>
   );
