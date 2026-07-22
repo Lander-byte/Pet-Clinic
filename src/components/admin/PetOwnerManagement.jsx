@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PetOwnerDetail from './PetOwnerDetail';
-import PetOwnerRow from './PetOwnerRow';
+import PetOwnerRow from './PetOwnerManagementRow';
 
 const petOwners = [
   { id: 1, name: 'Juan dela Cruz', email: 'juan@email.com', pets: ['Buddy', 'Max'], phone: '09171234567', status: 'Active' },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PetRow from './PetRow';
+import PetRow from './PetManagementRow';
 
 const initialPets = [
   { id: 1, name: 'Buddy', species: 'Dog', breed: 'Golden Retriever', age: 3, owner: 'Juan dela Cruz', status: 'Active' },
